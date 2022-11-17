@@ -10,8 +10,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/go-redis/redis"
-	"go.etcd.io/etcd/client/v3"
+	"github.com/go-redis/redis/v8"
+	clientv3 "go.etcd.io/etcd/client/v3"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/peer"
