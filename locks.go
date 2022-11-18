@@ -6,7 +6,7 @@ import (
 	"github.com/hashicorp/consul/api"
 	"github.com/pkg/errors"
 	"github.com/samuel/go-zookeeper/zk"
-	"go.etcd.io/etcd/client/v3"
+	clientv3 "go.etcd.io/etcd/client/v3"
 	"go.etcd.io/etcd/client/v3/concurrency"
 )
 
@@ -15,7 +15,7 @@ type DistLocker interface {
 	// Lock locks the locker.
 	Lock(ctx context.Context) error
 	// Unlock unlocks the previously successfully locked lock.
-	Unlock() error
+	Unlock(ctx context.Context) error
 }
 
 // LockNoop is a no-op implementation of the DistLocker interface.
